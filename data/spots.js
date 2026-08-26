@@ -220,10 +220,6 @@ window.OKINAMAP_SPOTS=[
         {
         src: "assets/spots/kin/beach-001-02.webp",
         position: "center"
-        },
-        {
-        src: "assets/spots/kin/beach-001-03.webp",
-        position: "center"
         }
     ],
     groupId: null
@@ -428,10 +424,6 @@ window.OKINAMAP_SPOTS=[
         {
         src: "assets/spots/kin/other-002-02.webp",
         position: "center"
-        },
-        {
-        src: "assets/spots/kin/other-002-03.webp",
-        position: "center"
         }
     ],
     groupId: null
@@ -480,10 +472,6 @@ window.OKINAMAP_SPOTS=[
         {
         src: "assets/spots/kin/restaurant-007-02.webp",
         position: "center"
-        },
-        {
-        src: "assets/spots/kin/restaurant-007-03.webp",
-        position: "center"
         }
     ],
     groupId: null
@@ -505,10 +493,6 @@ window.OKINAMAP_SPOTS=[
         },
         {
         src: "assets/spots/kin/restaurant-008-02.webp",
-        position: "center"
-        },
-        {
-        src: "assets/spots/kin/restaurant-008-03.webp",
         position: "center"
         }
     ],
