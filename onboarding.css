@@ -1,0 +1,99 @@
+/* Add this entire file contents to the END of styles.css. */
+body.onboarding-open { overflow: hidden; }
+
+.onboarding-modal[hidden] { display: none; }
+.onboarding-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #0b0b0b;
+}
+.onboarding-skip {
+  position: absolute;
+  top: max(18px, env(safe-area-inset-top));
+  right: 18px;
+  z-index: 3;
+  padding: 8px 4px;
+  border: 0;
+  background: transparent;
+  color: #333;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.onboarding-viewport { flex: 1; min-height: 0; overflow: hidden; }
+.onboarding-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform .28s ease;
+  will-change: transform;
+  touch-action: pan-y;
+}
+.onboarding-track.no-transition { transition: none; }
+.onboarding-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  padding: max(70px, calc(env(safe-area-inset-top) + 56px)) 24px 12px;
+  display: grid;
+  grid-template-rows: minmax(220px, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto;
+}
+.onboarding-copy { max-width: 440px; margin: 0 auto; }
+.onboarding-copy h2 { margin: 0 0 10px; font-size: clamp(24px, 7vw, 32px); line-height: 1.25; }
+.onboarding-copy p { margin: 0; font-size: 15px; line-height: 1.75; color: #333; }
+.onboarding-visual {
+  width: min(78vw, 330px);
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  display: grid;
+  place-items: center;
+}
+.onboarding-visual svg { width: 100%; height: 100%; overflow: visible; }
+.onboarding-visual .ui-fill { fill: #fff; }
+.onboarding-visual .ui-soft { fill: #f2f2f2; }
+.onboarding-visual .ui-ink { fill: #0b0b0b; }
+.onboarding-visual .ui-line { fill: none; stroke: #0b0b0b; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.onboarding-visual .ui-thin { fill: none; stroke: #0b0b0b; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.onboarding-visual .ui-red { fill: #e32636; stroke: #0b0b0b; stroke-width: 2; }
+.onboarding-footer {
+  flex: none;
+  padding: 12px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+.onboarding-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
+.onboarding-dot { width: 8px; height: 8px; padding: 0; border: 1.5px solid #000; border-radius: 50%; background: #fff; }
+.onboarding-dot.active { background: #000; }
+.onboarding-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.onboarding-button { min-height: 48px; border: 2px solid #000; background: #fff; font-weight: 800; cursor: pointer; }
+.onboarding-button.primary { color: #fff; background: #000; }
+.onboarding-button[hidden] { visibility: hidden; display: block; }
+.onboarding-button.is-start { box-shadow: 3px 3px 0 #bbb; }
+.onboarding-replay {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1.5px solid #000;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (min-width: 700px) {
+  .onboarding-modal { inset: 18px; border: 2px solid #000; box-shadow: 8px 8px 0 rgba(0,0,0,.14); }
+  .onboarding-slide { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; text-align: left; padding: 76px 56px 24px; }
+  .onboarding-copy { margin: 0; }
+  .onboarding-visual { width: min(38vw, 360px); }
+  .onboarding-footer { padding-right: 56px; padding-left: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .onboarding-track { transition: none; }
+}
