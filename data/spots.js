@@ -58,7 +58,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["オーシャンビュー"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や利用時の注意など、必要な情報を書きます。",
-    coordinates: [127.96160747538941, 26.474244490393616],
+    coordinates: [127.96005675063391, 26.47370697998666],
     googleMapsUrl: "https://maps.app.goo.gl/wXjtUaAn7xpmWJfq9",
     photos: [
         {
@@ -110,7 +110,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["オーシャンビュー"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や利用時の注意など、必要な情報を書きます。",
-    coordinates: [128.00209281319096, 26.49319937120382],
+    coordinates: [128.0005522474337, 26.49172682947371],
     googleMapsUrl: "https://maps.app.goo.gl/dCcpRDVe8ico5egS9",
     photos: [
         {
@@ -162,7 +162,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["沖縄そば"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.9476833168384, 26.474533873767115],
+    coordinates: [127.94636313236725, 26.474102146900705],
     googleMapsUrl: "https://maps.app.goo.gl/iJxSDUEnCBAF4w7y7",
     photos: [
         {
@@ -184,7 +184,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["ランチ"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.94072007222185, 26.462478913911557],
+    coordinates: [127.94038784989672, 26.46235533172934],
     googleMapsUrl: "https://maps.app.goo.gl/MKDbMZ5PvoaiKwkP9",
     photos: [
         {
@@ -219,6 +219,10 @@ window.OKINAMAP_SPOTS=[
         },
         {
         src: "assets/spots/kin/beach-001-02.webp",
+        position: "center"
+        },
+        {
+        src: "assets/spots/kin/beach-001-03.webp",
         position: "center"
         }
     ],
@@ -258,7 +262,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["オーシャンビュー"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や利用時の注意など、必要な情報を書きます。",
-    coordinates: [127.9475598934328, 26.45987048938984],
+    coordinates: [127.94721947824497, 26.45976868984509],
     googleMapsUrl: "https://maps.app.goo.gl/MQdKrBQ8K5Ga7BPw8",
     photos: [
         {
@@ -284,7 +288,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["テイクアウト", "タコライス"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.9176866954073, 26.453401573251924],
+    coordinates: [127.91727283971389, 26.453288263617],
     googleMapsUrl: "https://maps.app.goo.gl/oGCoHW5KiUF86DhB6",
     photos: [
         {
@@ -310,7 +314,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["テイクアウト", "タコライス"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.91672321853964, 26.45411474256435],
+    coordinates: [127.91637334932047, 26.453992533138333],
     googleMapsUrl: "https://maps.app.goo.gl/Daa3Fn6RsDJTNs5X6",
     photos: [
         {
@@ -336,7 +340,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["テイクアウト", "タコライス"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.91515671705635, 26.45387553978879],
+    coordinates: [127.91476815809244, 26.45375228730361],
     googleMapsUrl: "https://maps.app.goo.gl/W72TLfDAgzFokNYr9",
     photos: [
         {
@@ -362,7 +366,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["スイーツ"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.93875407669675, 26.463359611794434],
+    coordinates: [127.93825704545313, 26.46304870266776],
     googleMapsUrl: "https://maps.app.goo.gl/gggtpd6ThjrgLZuc6",
     photos: [
         {
@@ -388,7 +392,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["ランチ"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.84654382088772, 26.44604937640377],
+    coordinates: [127.846049838116, 26.44596363250584],
     googleMapsUrl: "https://maps.app.goo.gl/BjYqV2YwY3Tw6vNo6",
     photos: [
         {
@@ -414,7 +418,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["オーシャンビュー"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.94392939335496, 26.44859150183439],
+    coordinates: [127.9429580572905, 26.448147634886304],
     googleMapsUrl: "https://maps.app.goo.gl/b1hq1sJjyPBnZZz57",
     photos: [
         {
@@ -423,6 +427,10 @@ window.OKINAMAP_SPOTS=[
         },
         {
         src: "assets/spots/kin/other-002-02.webp",
+        position: "center"
+        },
+        {
+        src: "assets/spots/kin/other-002-03.webp",
         position: "center"
         }
     ],
@@ -436,7 +444,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["オーシャンビュー"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.84702215555647, 26.443763681235936],
+    coordinates: [127.84769636791675, 26.44357043769728],
     googleMapsUrl: "https://maps.app.goo.gl/hZ6oAfgWyqMzvrWs9",
     photos: [
         {
@@ -462,7 +470,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["テイクアウト"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.92752050382134, 26.45594805624734],
+    coordinates: [127.92714924027565, 26.455804073205154],
     googleMapsUrl: "https://maps.app.goo.gl/F9rPiGn5oyZiGTyF6",
     photos: [
         {
@@ -471,6 +479,10 @@ window.OKINAMAP_SPOTS=[
         },
         {
         src: "assets/spots/kin/restaurant-007-02.webp",
+        position: "center"
+        },
+        {
+        src: "assets/spots/kin/restaurant-007-03.webp",
         position: "center"
         }
     ],
@@ -484,7 +496,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["テイクアウト"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.84820954189921, 26.44300998518867],
+    coordinates: [127.8474430007951, 26.442829677578196],
     googleMapsUrl: "https://maps.app.goo.gl/rq2ndJ8ifm5xbjQE7",
     photos: [
         {
@@ -493,6 +505,10 @@ window.OKINAMAP_SPOTS=[
         },
         {
         src: "assets/spots/kin/restaurant-008-02.webp",
+        position: "center"
+        },
+        {
+        src: "assets/spots/kin/restaurant-008-03.webp",
         position: "center"
         }
     ],
@@ -508,7 +524,7 @@ window.OKINAMAP_SPOTS=[
     tags: [],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.83575219217552, 26.434312282773387],
+    coordinates: [127.83528935141996, 26.434027845993427],
     googleMapsUrl: "https://maps.app.goo.gl/3tnRuzzFqpMBqhnh8",
     photos: [
         {
@@ -534,7 +550,7 @@ window.OKINAMAP_SPOTS=[
     tags: [],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.82796895178402, 26.422053434826285],
+    coordinates: [127.82642173564284, 26.42126650531867],
     googleMapsUrl: "https://maps.app.goo.gl/AshD52sbsWy2wxGCA",
     photos: [
         {
@@ -582,7 +598,7 @@ window.OKINAMAP_SPOTS=[
     tags: ["スイーツ"],
     description: "地元の人がおすすめするスポットの短い紹介文です。",
     notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
-    coordinates: [127.82379690088999, 26.419628128989647],
+    coordinates: [127.82297230919387, 26.41942203957543],
     googleMapsUrl: "https://maps.app.goo.gl/z9brgch6YLjGej446",
     photos: [
         {
