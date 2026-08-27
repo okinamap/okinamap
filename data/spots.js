@@ -424,10 +424,6 @@ window.OKINAMAP_SPOTS=[
         {
         src: "assets/spots/kin/other-002-02.webp",
         position: "center"
-        },
-        {
-        src: "assets/spots/kin/other-002-03.webp",
-        position: "center"
         }
     ],
     groupId: null
