@@ -360,8 +360,8 @@ window.OKINAMAP_SPOTS=[
     name: "ネイバーフッドコーヒーハウス",
     category: "カフェ",
     tags: ["スイーツ"],
-    description: "地元の人がおすすめするスポットの短い紹介文です。",
-    notes: "駐車場や支払い方法など、注意が必要な情報を書きます。",
+    description: "美味しいスイーツいっぱいのカフェ。マフィンがおすすめ。",
+    notes: "急にお休みとかあるから開いてるか確認したほうがいい",
     coordinates: [127.93825704545313, 26.46304870266776],
     googleMapsUrl: "https://maps.app.goo.gl/gggtpd6ThjrgLZuc6",
     photos: [
