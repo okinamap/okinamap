@@ -17,4 +17,109 @@ const hasFilters=f=>f.categories.length||Object.values(f.tags).some(a=>a.length)
 function showToast(msg){clearTimeout(toastTimer);$("toast").textContent=msg;$("toast").classList.add("show");toastTimer=setTimeout(()=>$("toast").classList.remove("show"),3000)}
 function insideBounds(lng,lat){const b=cfg.maxBounds;return lng>=b[0][0]&&lng<=b[1][0]&&lat>=b[0][1]&&lat<=b[1][1]}
 function locate(){if(lastPosition){map.easeTo({center:[lastPosition.coords.longitude,lastPosition.coords.latitude],zoom:15,duration:500});return}if(!map){showToast("地図を読み込んでいます");return}if(!navigator.geolocation){showToast("この端末では現在地を利用できません");return}navigator.geolocation.getCurrentPosition(pos=>{const lng=pos.coords.longitude,lat=pos.coords.latitude;if(!insideBounds(lng,lat)){showToast("現在地はOKINAMAPの表示範囲外です");return}lastPosition=pos;if(!userMarker){const anchor=document.createElement("div");anchor.className="marker-anchor";const pin=document.createElement("div");pin.className="current-location-pin";pin.ariaLabel="現在地";anchor.appendChild(pin);userMarker=new maplibregl.Marker({element:anchor,anchor:"center",offset:[0,0]}).setLngLat([lng,lat]).addTo(map)}else userMarker.setLngLat([lng,lat]);map.easeTo({center:[lng,lat],zoom:15,duration:600})},err=>showToast(err.code===1?"現在地を取得できませんでした。位置情報設定をご確認ください":"現在地を取得できませんでした"),{enableHighAccuracy:true,timeout:10000,maximumAge:60000})}
-$("sheetClose").onclick=closeSheet;$("groupPrev").onclick=()=>{currentGroupIndex=(currentGroupIndex-1+currentGroup.length)%currentGroup.length;showSpot()};$("groupNext").onclick=()=>{currentGroupIndex=(currentGroupIndex+1)%currentGroup.length;showSpot()};$("filterOpen").onclick=()=>{draftFilters=structuredClone(activeFilters);syncFilterUI();$("filterModal").hidden=false};$("filterClose").onclick=()=>{$("filterModal").hidden=true};$("clearFilters").onclick=()=>{draftFilters={categories:[],tags:{}};syncFilterUI()};$("applyFilters").onclick=()=>{activeFilters=structuredClone(draftFilters);$("filterModal").hidden=true;$("filterBadge").hidden=!hasFilters(activeFilters);closeSheet();if(map)renderMarkers()};$("locateButton").onclick=locate;initFilters();initMap()})();
+
+function initOnboarding() {
+  const STORAGE_KEY = "okinamap-onboarding-seen-v1";
+  const splash = $("splash");
+  const modal = $("onboardingModal");
+  const track = $("onboardingTrack");
+  const dots = [...document.querySelectorAll(".onboarding-dot")];
+  const backButton = $("onboardingBack");
+  const nextButton = $("onboardingNext");
+  const skipButton = $("onboardingSkip");
+  const replayButton = $("onboardingReplay");
+  const total = dots.length;
+  let current = 0;
+  let openedFromMenu = false;
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  function hasSeenOnboarding() {
+    try { return localStorage.getItem(STORAGE_KEY) === "1"; }
+    catch { return false; }
+  }
+
+  function rememberSeen() {
+    try { localStorage.setItem(STORAGE_KEY, "1"); }
+    catch { /* Storage may be disabled */ }
+  }
+
+  function showModal(fromMenu = false) {
+    openedFromMenu = fromMenu;
+    current = 0;
+    updateSlide(false);
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("onboarding-open");
+    skipButton.focus({ preventScroll: true });
+  }
+
+  function closeModal(markSeen = true) {
+    if (markSeen) rememberSeen();
+    modal.hidden = true;
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("onboarding-open");
+    if (openedFromMenu) replayButton?.focus({ preventScroll: true });
+  }
+
+  function updateSlide(animate = true) {
+    track.classList.toggle("no-transition", !animate);
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === current);
+      dot.setAttribute("aria-current", index === current ? "step" : "false");
+    });
+    backButton.hidden = current === 0;
+    nextButton.textContent = current === total - 1 ? "はじめる" : "次へ";
+    nextButton.classList.toggle("is-start", current === total - 1);
+    requestAnimationFrame(() => track.classList.remove("no-transition"));
+  }
+
+  function goNext() {
+    if (current === total - 1) closeModal(true);
+    else { current += 1; updateSlide(true); }
+  }
+
+  function goBack() {
+    if (current > 0) { current -= 1; updateSlide(true); }
+  }
+
+  function openAfterSplash() {
+    if (!hasSeenOnboarding()) showModal(false);
+  }
+
+  nextButton.addEventListener("click", goNext);
+  backButton.addEventListener("click", goBack);
+  skipButton.addEventListener("click", () => closeModal(true));
+  replayButton?.addEventListener("click", () => {
+    const filterModal = $("filterModal");
+    if (filterModal) filterModal.hidden = true;
+    showModal(true);
+  });
+
+  track.addEventListener("touchstart", event => {
+    const touch = event.changedTouches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  }, { passive: true });
+
+  track.addEventListener("touchend", event => {
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - touchStartX;
+    const dy = touch.clientY - touchStartY;
+    if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;
+    if (dx < 0 && current < total - 1) { current += 1; updateSlide(true); }
+    if (dx > 0 && current > 0) { current -= 1; updateSlide(true); }
+  }, { passive: true });
+
+  modal.addEventListener("keydown", event => {
+    if (event.key === "ArrowRight") goNext();
+    if (event.key === "ArrowLeft") goBack();
+    if (event.key === "Escape") closeModal(true);
+  });
+
+  if (splash) setTimeout(openAfterSplash, 1250);
+  else openAfterSplash();
+}
+
+$("sheetClose").onclick=closeSheet;$("groupPrev").onclick=()=>{currentGroupIndex=(currentGroupIndex-1+currentGroup.length)%currentGroup.length;showSpot()};$("groupNext").onclick=()=>{currentGroupIndex=(currentGroupIndex+1)%currentGroup.length;showSpot()};$("filterOpen").onclick=()=>{draftFilters=structuredClone(activeFilters);syncFilterUI();$("filterModal").hidden=false};$("filterClose").onclick=()=>{$("filterModal").hidden=true};$("clearFilters").onclick=()=>{draftFilters={categories:[],tags:{}};syncFilterUI()};$("applyFilters").onclick=()=>{activeFilters=structuredClone(draftFilters);$("filterModal").hidden=true;$("filterBadge").hidden=!hasFilters(activeFilters);closeSheet();if(map)renderMarkers()};$("locateButton").onclick=locate;initFilters();initMap();initOnboarding();})();
